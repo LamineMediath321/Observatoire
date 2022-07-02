@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100;300&family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container_reg {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    background-image: url(/imgs/coucher-soleil-lever.png);
+    background-size: 100% 100%;
+}
+.container_reg::before {
+    content: '';
+    position: absolute;
+    /* border-radius: 20px; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000000ad;
+    /* z-index: -1; */
+    /* opacity: 0.3; */
+}
+.container_reg::after {
+    content: '';
+    position: absolute;
+    /* border-radius: 20px; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.329) 70%, rgba(255, 255, 255, 0.171) 100%);
+    z-index: 1;
+    /* opacity: 0.3; */
+}
+
+.content-form{
+    z-index: 2;
+    margin: 70px 100px;
+}
+.content-form .cc{
+    position: relative;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 32px;
+    color: #fff;
+}
+.content-form .versLogin {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 200;
+    margin-top: 20px;
+    padding-left: 3px;
+}
+.content-form .versLogin a {
+    color: #00C0FD;
+}
+
+.content-form .formulaire {
+    margin-top: 25px ;
+}
+.inpout{
+    width: 208px;
+    height: 42px;
+    /* padding: 15px; */
+    margin-right: 10px;
+    background: #484848;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: rgba(245, 242, 242, 0.2) 0px 2px 8px 0px;
+}
+.inpout::placeholder{
+    color: #fff;
+}
+.inpout:focus{
+    border: #00C0FD;
+}
+.civilite {
+    width: 100px !important;
+}
+.soumettre{
+    width: 426px;
+    height: 42px;
+    background: #00C0FD;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: rgba(245, 242, 242, 0.2) 0px 2px 8px 0px;
+}
+
+/* ----------------LOGIN------------------ */
+.content-form-log{
+    z-index: 2;
+    margin: 100px 120px;
+}
+
+.content-form-log .connexion{
+    position: relative;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 60px;
+    color: #fff;
+}
+
+.content-form-log .versLogin {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 200;
+    margin-top: 20px;
+    padding-left: 3px;
+}
+.content-form-log .versLogin a {
+    color: #00C0FD;
+}
+
+.content-form-log .formulaire {
+    margin-top: 25px ;
+}
+
+.outpout{
+    width: 338px;
+    height: 42px;
+    margin-right: 10px;
+    background: #484848;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: rgba(245, 242, 242, 0.2) 0px 2px 8px 0px;
+}
+.outpout::placeholder{
+    color: #fff;
+}
+.outpout:focus{
+    border: #00C0FD;
+}
+.seConnecter{
+    width: 338px;
+    height: 42px;
+    background: #00C0FD;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: rgba(245, 242, 242, 0.2) 0px 2px 8px 0px;
+}
+.remember label span{
+    color: rgba(255, 255, 255, 0.692);
+}
+
+.forgot{
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.534);
+}
+.forgot:hover{
+    color: rgba(255, 255, 255, 0.938);
+}

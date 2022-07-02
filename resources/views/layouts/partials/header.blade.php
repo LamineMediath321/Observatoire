@@ -7,10 +7,10 @@
         </form>
 
         <div class="flex-shrink-0">
-          <a href="#" class="btn btn-info text-white">
+          <a href="{{route('register')}}" class="btn btn-info text-white">
             Inscription
           </a>
-           <a href="#" class="btn btn-outline-info" >
+           <a href="{{route('login')}}" class="btn btn-outline-info" >
             connexion
           </a>
           
