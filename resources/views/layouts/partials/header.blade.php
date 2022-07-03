@@ -6,8 +6,8 @@
     </label>
   </div>
   <div class="boutonInscrip">
-    <a class="btn btn-primary" href="#" role="button">Inscription</a>
-    <a class="btn btn-outline-primary" href="#" role="button">Connexion</a>
+    <a class="btn btn-primary" href="{{ route('register') }}" role="button">Inscription</a>
+    <a class="btn btn-outline-primary" href="{{ route('login') }}" role="button">Connexion</a>
   </div>
 </div>
 <!-- <header class="py-3 mb-3 border-bottom">
