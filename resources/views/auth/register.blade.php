@@ -7,14 +7,14 @@
         </x-slot> -->
         
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+       
     <div class="content-form">
         <h1 class="cc">Créer un nouveau compte</h1>
         <p class="versLogin">
             A déjà un compte? <a href="{{ route('login') }}"> Connectez-vous !</a>
         </p>
         
-
+         <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <form method="POST" action="{{ route('register') }}" class="formulaire">
             @csrf
 
@@ -56,30 +56,14 @@
             <!-- Email Passeword -->
             <div class="mt-4 d-flex">
                 <input type="email" name="email" id="email" class="inpout mt-1" placeholder="Email" :value="old('email')" required>
+            </div>
+
+           <!-- Password -->
+            <div class="mt-4 d-flex">
                 <input type="password" name="password" id="password" class="inpout mt-1" placeholder="Mot de passe" required>
+                <input type="password" name="password_confirmation" id="password_confirmation" class="inpout mt-1" placeholder="Confirm Password" required>
             </div>
 
-            <!-- Password -->
-            <div class="mt-6 d-flex">
-                <x-input id="password" class=" mr-3 "
-                        type="password"
-                        name="password"
-                        required autocomplete="new-password" />
-                <x-input id="password" class=" mt-1 "
-                        type="password"
-                        name="password"
-                        required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-             <div class="mt-6 d-flex">
-                <x-input id="password_confirmation" class="mr-3"
-                        type="password"
-                        name="password_confirmation" required />
-                <x-input id="password_confirmation" class=" mt-1"
-                        type="password"
-                        name="password_confirmation" required />
-             </div>
 
             <div class="flex items-center  mt-6">  
                 <input type="submit" class="soumettre mt-1" value="S'inscrire">  
