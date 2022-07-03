@@ -60,7 +60,7 @@
             </div>
 
             <!-- Password -->
-            <!-- <div class="mt-6 d-flex">
+            <div class="mt-6 d-flex">
                 <x-input id="password" class=" mr-3 "
                         type="password"
                         name="password"
@@ -69,17 +69,17 @@
                         type="password"
                         name="password"
                         required autocomplete="new-password" />
-            </div> -->
+            </div>
 
             <!-- Confirm Password -->
-             <!-- <div class="mt-6 d-flex">
+             <div class="mt-6 d-flex">
                 <x-input id="password_confirmation" class="mr-3"
                         type="password"
                         name="password_confirmation" required />
                 <x-input id="password_confirmation" class=" mt-1"
                         type="password"
                         name="password_confirmation" required />
-            </div> -->
+             </div>
 
             <div class="flex items-center  mt-6">  
                 <input type="submit" class="soumettre mt-1" value="S'inscrire">  
