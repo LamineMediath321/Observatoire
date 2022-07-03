@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->text('adresse');
-            $table->string('civilite', 5);
+            $table->string('civilite');
             $table->string('profession');
             $table->string('typeStructure');
             $table->string('nomStructure');
