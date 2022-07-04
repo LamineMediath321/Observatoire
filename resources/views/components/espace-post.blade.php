@@ -1,3 +1,5 @@
+@auth
+    
 
 <!-- espace de poste utilisateur -->
 <form method="POST" class="card-user-connected">
@@ -56,3 +58,4 @@
             </div>
         </div>
 </form>
+@endauth
