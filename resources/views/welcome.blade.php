@@ -88,23 +88,17 @@
                             ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
                             cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
                             ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
                         </p>
                         <div class="medias">
                             <!-- Pour photo -->
                             <div class="media-post">
-                                <img src="/images/beau-bord-mer.webp" alt="">
-                            </div>
-                            <div class="media-post">
-                                <img src="/images/coucher-soleil-lever.webp" alt="">
-                            </div>
-                            <div class="media-post">
-                                <img src="/images/coucher-soleil-mer.webp" alt="">
+                                <img src="/images/img_actu2.jpg" alt="">
                             </div>
                             <!-- Pour vidéo -->
                             <!-- <div class="media-post">
