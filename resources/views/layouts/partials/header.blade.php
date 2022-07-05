@@ -6,7 +6,17 @@
     </label>
   </div>
   <div class="boutonInscrip">
-    <a class="btn btn-primary" href="{{ route('register') }}" role="button">Inscription</a>
-    <a class="btn btn-outline-primary" href="{{ route('login') }}" role="button">Connexion</a>
+    @auth
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="btn btn-primary">
+          {{ __('Déconnexion') }}
+        </button>
+      </form>
+    @endauth
+    @guest
+        <a class="btn btn-primary" href="{{ route('register') }}" role="button">Inscription</a>
+        <a class="btn btn-outline-primary" href="{{ route('login') }}" role="button">Connexion</a>
+    @endguest
   </div>
 </div>

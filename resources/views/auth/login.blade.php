@@ -9,14 +9,15 @@
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+       
         
         <div class="content-form-log">
             <h1 class="connexion"> Connexion </h1>
             <p class="versLogin">
                Pas encore de compte? <a href="{{ route('register') }}"> Créez en un !</a>
             </p>
+             <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
