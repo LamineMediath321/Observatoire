@@ -1,15 +1,15 @@
 <x-app-layout>
 
             <!-- Contenu medias -->
-    <div class="mainMedias">
+    <!-- <div class="mainMedias"> -->
                 
-        <div class="les-medias">
+        <!-- <div class="les-medias"> -->
                     <!-- espace des images -->
             <div class="group-medias">
                 <h4>Images</h4>
                 <div class="list-of-medias">
                     <div class="card oneCard" style="width: 210px;">
-                        <img class="card-img-top" src="/imgs/beau-bord-mer.webp" alt="Card image cap">
+                        <img class="card-img-top" src="/images/beau-bord-mer.webp" alt="Card image cap">
                         <div class="card-body">
                             <svg width="13" height="13" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_63_430)">
@@ -94,8 +94,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
 
     <!-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">

@@ -128,7 +128,7 @@ a {
         .boutons-navig .navig-bouton a {
             position: relative;
             width: 160px;
-            height: 39px;
+            height: 43px;
             display: flex;
             justify-content: center;
             padding: 20px 20px 20px 10px;
@@ -148,13 +148,17 @@ a {
             margin: -6px 0 0 6px;
             color: black;
         }
-        .boutons-navig .boutonNouveau{
+        .boutons-navig .boutonNouveau a{
             background: none;
             border: 1px solid #C2C2C2;
             border-radius: 10px 10px 0 0;
             margin-left: 10px;
+            margin-top: 4px;
             display: flex;
             justify-content: center;
+        }
+        .boutons-navig .boutonNouveau a svg{
+            margin-right: 5px;
         }
         .text-button-new{
             color: #0FA958;
@@ -166,8 +170,10 @@ a {
             margin-bottom: 5px;
             z-index: 1;
         }
-        .boutonInscrip a{
+        .boutonInscrip button{
             border-radius: 10px;
+            background: #0083fd;
+            color: #fff;
         }
 
     /* Top bar FIN */
@@ -190,10 +196,10 @@ a {
     }
     .main-side .mainMedias .les-medias .group-medias{
        margin-bottom: 3rem;
-       margin-left: 1rem;
+       margin-left: 2rem;
     }
     .group-medias h4{
-        margin-left: 2rem;
+        margin-left: 1.5rem;
         font-size: 18px;
     }
     .list-of-medias{
@@ -222,18 +228,20 @@ a {
     }
     .card-body {
         /* flex: 1 1 auto; */
-        padding: 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.6rem;
+        display: flex;
     }
     .card-text{
         font-size: 10px;
-        margin-left: 2px;
+        margin-left: 5px;
     }
     .card-body button{
         border: none;
         background: none;
     }
     .card-body button#share{
-        margin-left: 4.5rem;
+        margin-left: 5rem;
+        margin-right: 5px;
     }
     
     /* Main bar FIN */

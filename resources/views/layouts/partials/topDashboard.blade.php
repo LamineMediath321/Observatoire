@@ -26,7 +26,10 @@
             </a>
         </div>
     </div>
-    <div class="boutonInscrip">
-        <a class="btn btn-primary" href="#" role="button">Déconnexion</a>
-    </div>
+    @auth
+    <form class="boutonInscrip" method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button class="btn" type="submit">{{ __('Déconnexion') }}</button>
+    </form>
+    @endauth
 </div>
