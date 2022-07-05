@@ -88,11 +88,13 @@
                     <div class="post">
                         <p class="desc-post">
                             {{$public->description}}
+
                         </p>
                         <div class="medias">
                             <!-- Pour photo -->
                             <div class="media-post">
                                 <img src="{{$public->src}}" alt="">
+
                             </div>
                             
                             <!-- Pour vidéo -->
