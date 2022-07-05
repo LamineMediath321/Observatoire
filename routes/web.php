@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('app_home');
-Route::get('/actu', [HomeController::class, 'actualites'])->name('app_actu');
-Route::get('/actu/{id}', [HomeController::class, 'single'])->name('app_single');
-Route::get('/contact', [HomeController::class, 'contact'])->name('app_contact');
+Route::post('/publier', [HomeController::class, 'publier'])->name('publier');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
