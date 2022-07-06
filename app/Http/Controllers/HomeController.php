@@ -164,6 +164,15 @@ class HomeController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
+
+
+        // $donnees = Donnee::leftJoin('partagers', 'donnees.id', '=', 'partagers.donnee_id')
+        //     ->where('partagers.beneficiaire_id', Auth::id())
+        //     ->get();
+
+        // dd($donnees);
+
+
         return view('dashboard', [
             'photos' => $photos,
             'videos' => $videos,
