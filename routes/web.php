@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ForumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,8 @@ Route::get('/publier/{donnee}', [HomeController::class, 'publier_by'])->name('pu
 Route::post('/stocker', [HomeController::class, 'stocker'])->name('stocker');
 Route::post('/partager', [HomeController::class, 'partager'])->name('partager');
 Route::get('/delete/{id}', [HomeController::class, 'delete'])->name('delete');
-
+Route::get('/partagePage', [HomeController::class, 'partagePage'])->name('partagePage');
+Route::get('/forum', [ForumController::class, 'forum'])->name('forum');
 
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');

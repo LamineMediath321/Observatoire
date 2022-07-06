@@ -125,7 +125,7 @@ a {
             display: flex;
             position: relative;
             width: 54%;
-            padding: 26px 0 0 3rem;
+            padding: 26px 0 0 .5rem;
             /* margin-top: 10px; */
         }
         .navig-bouton{
@@ -141,7 +141,7 @@ a {
             background: none;
             border: none;
         }
-        .boutons-navig .navig-bouton:first-child a{
+        .boutons-navig .navig-bouton #partage{
             border-bottom: 1px solid #00C0FD;
         }
         .navig-bouton a svg{
@@ -158,8 +158,8 @@ a {
             background: none;
             border: 1px solid #C2C2C2;
             border-radius: 10px 10px 0 0;
-            margin-left: 10px;
-            margin-top: 4px;
+            margin-left: 30px;
+            margin-top: 5px;
             display: flex;
             justify-content: center;
         }
@@ -172,7 +172,7 @@ a {
         .container .topbar .boutonInscrip{
             position: relative;
             display: flex;
-            margin-left: 13em;
+            margin-left: 10em;
             margin-bottom: 5px;
             z-index: 1;
         }
@@ -183,9 +183,8 @@ a {
         }
 
     /* Top bar FIN */
-
-    /* Main Début */
-    .main-side{
+     /* Main Début */
+     .main-side{
         position: relative;
         width: 100%;
         display: flex;
