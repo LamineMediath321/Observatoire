@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donnee;
+use App\Models\Partager;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -161,11 +164,10 @@ class HomeController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
-
         return view('dashboard', [
             'photos' => $photos,
             'videos' => $videos,
-            'documents' => $documents
+            'documents' => $documents,
         ]);
     }
 
@@ -208,4 +210,26 @@ class HomeController extends Controller
         ]);
     }
     
-}
+    public function partager(Request $request)
+    {
+        $request->validate([
+            'beneficiaire' => 'required',
+        ]);
+
+        $user = User::where('email', $request->beneficiaire)
+            ->first();
+
+        if (!$user) {
+            return Redirect::route('dashboard');
+        }
+
+        $partager = Partager::create([
+            'proprio_id' => Auth::id(),
+            'beneficiaire_id' => $user->id,
+            'donnee_id' => $request->donnee
+        ]);
+
+        $partager->save();
+        return Redirect::route('dashboard');
+    }
+
