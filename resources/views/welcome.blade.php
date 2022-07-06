@@ -93,7 +93,7 @@
                         <div class="medias">
                             <!-- Pour photo -->
                             <div class="media-post">
-                                <img src="{{$public->src}}" alt="">
+                                <img src="{{Storage::url($public->src)}}" alt="">
 
                             </div>
                             
