@@ -24,6 +24,7 @@ Route::get('/delete/{id}', [HomeController::class, 'delete'])->name('delete');
 Route::get('/partagePage', [HomeController::class, 'partagePage'])->name('partagePage');
 Route::get('/forum', [ForumController::class, 'forum'])->name('forum');
 
-Route::get('/dashboard/partager', [HomeController::class, 'dashboardPartager'])->name('dashboardPartager');
+
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
