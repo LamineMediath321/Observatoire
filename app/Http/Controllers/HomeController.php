@@ -179,6 +179,37 @@ class HomeController extends Controller
         return Redirect::route('dashboard');
     }
 
+    public function partagePage()
+    {
+        $photos = Donnee::with('user')
+            ->where('user_id', Auth::id())
+            ->where('type', 'photo')
+            ->where('status', 'stock')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+
+        $videos = Donnee::with('user')
+            ->where('user_id', Auth::id())
+            ->where('type', 'video')
+            ->where('status', 'stock')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+        $documents = Donnee::with('user')
+            ->where('user_id', Auth::id())
+            ->where('type', 'documents')
+            ->where('status', 'stock')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+        return view('layouts/partage', [
+            'photos' => $photos,
+            'videos' => $videos,
+            'documents' => $documents
+        ]);
+    }
+    
     public function partager(Request $request)
     {
         $request->validate([
@@ -201,4 +232,4 @@ class HomeController extends Controller
         $partager->save();
         return Redirect::route('dashboard');
     }
-}
+
