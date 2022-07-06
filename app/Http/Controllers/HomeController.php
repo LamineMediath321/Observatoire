@@ -24,6 +24,7 @@ class HomeController extends Controller
         ]);
     }
 
+    /**Faire une plublication */
     public function publier(Request $request)
     {
 
@@ -43,6 +44,7 @@ class HomeController extends Controller
                 $filename,
                 'public'
             );
+            $type = 'photo';
         } elseif ($request->video) {
             $filename = time() . '.' . $request->video->extension();
             $path = $request->file('video')->storeAs(
@@ -68,7 +70,73 @@ class HomeController extends Controller
         return Redirect::route('app_home');
     }
 
+    /**Faire une publication sur les donnees stocker */
+    public function publier_by(Donnee $donnee)
+    {
+        $donnee->status = 'publique';
+        $donnee->save();
 
+        return Redirect::route('app_home');
+    }
+
+
+    /**Stocker dans son espace propre */
+    public function stocker(Request $request)
+    {
+
+        if (!$request->photo && !$request->video && !$request->documents) {
+            $request->validate([
+                'lieu' => 'required',
+                'description' => 'required',
+                'video' => 'required',
+                'photo' => 'required',
+            ]);
+        }
+
+        if ($request->photo) {
+            $filename = time() . '.' . $request->photo->extension();
+            $path = $request->file('photo')->storeAs(
+                'photos',
+                $filename,
+                'public'
+            );
+            $type = 'photo';
+        } elseif ($request->video) {
+            $filename = time() . '.' . $request->video->extension();
+            $path = $request->file('video')->storeAs(
+                'videos',
+                $filename,
+                'public'
+            );
+            $type = 'video';
+        } else {
+            $filename = time() . '.' . $request->documents->extension();
+            $path = $request->file('documents')->storeAs(
+                'documents',
+                $filename,
+                'public'
+            );
+            $type = 'document';
+        }
+
+        $donnee = new Donnee();
+        $donnee->src = $path;
+        $donnee->user_id = Auth::id();
+        $donnee->type = $type;
+        $donnee->titre = $request->titre;
+        $donnee->description = $request->description;
+        $donnee->status = 'stock';
+        $donnee->lieu = $request->lieu;
+
+
+
+        $donnee->save();
+
+        return Redirect::route('dashboard');
+    }
+
+
+    /**Le dashboard de l'utilisateur avec ses donnees perso */
     public function dashboard()
     {
         $photos = Donnee::with('user')
@@ -85,9 +153,19 @@ class HomeController extends Controller
             ->where('status', 'stock')
             ->orderBy('created_at', 'DESC')
             ->get();
+
+        $documents = Donnee::with('user')
+            ->where('user_id', Auth::id())
+            ->where('type', 'documents')
+            ->where('status', 'stock')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+
         return view('dashboard', [
             'photos' => $photos,
-            'videos' => $videos
+            'videos' => $videos,
+            'documents' => $documents
         ]);
     }
 

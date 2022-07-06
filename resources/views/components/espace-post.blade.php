@@ -25,7 +25,7 @@
                         
         </div>
         <div class="qd9">
-            <input name="description" type="text-area" id="description" class="queDire" placeholder="Qu’est ce qu'il y a de nouveau aujourd’hui ?">
+            <input name="description" type="text-area" id="description" class="queDire" placeholder="Qu’est ce qu'il y a de nouveau aujourd’hui ?" required>
                 <div class="medias d-flex">
                     <div class="photo d-flex">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
