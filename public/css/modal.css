@@ -65,8 +65,8 @@ label{
     margin-right: 10px;
     padding: 10px;
     padding-left: 15px;
-    background: #FDC500;
-    border-radius: 0 10px 10px 0;
+    /* background: #FDC500;
+    border-radius: 0 10px 10px 0; */
 }
 .btn-close {
  
