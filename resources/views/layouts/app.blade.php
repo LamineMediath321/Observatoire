@@ -47,13 +47,13 @@
                              @csrf
                             <div class="modal-body">
                                 <div class="mt-4 d-flex">
-                                    <input type="text" name="lieu" id="lieuLit" class="outpout " placeholder="Lieu sur le littoral"  required>   
+                                    <input type="text" name="lieu" id="lieuLit" class="outpout" placeholder="Lieu sur le littoral"  required>   
                                 </div>
                                 <div class="mt-4 d-flex">
-                                    <input type="text" name="titre" id="titre" class="outpout " placeholder="Titre"  required>   
+                                    <input type="text" name="titre" id="titre" class="outpout" placeholder="Titre"  required>   
                                 </div>
                                 <div class="mt-4 d-flex">
-                                    <input type="text" name="description" id="desc" class="outpout " placeholder="Description"  required>   
+                                    <input type="text" name="description" id="desc" class="outpout" placeholder="Description"  required>   
                                 </div>
                                 <div class="medias d-flex">
                                     <div class="mt-4 d-flex">
@@ -85,6 +85,36 @@
                             </div>
                             <div class="modal-footer">
                             <button type="submit" class="btn">Ajouter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header ">
+                            <h5 class="modal-title" id="exampleModalLabel">Ajout Média</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <!-- espace de poste utilisateur -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                        <form method="POST" action="{{route('stocker')}} " enctype="multipart/form-data">
+                             @csrf
+                            <div class="modal-body">
+                                <div class="mt-4 d-flex">
+                                    <!-- <input type="text" name="lieu" id="lieuLit" class="outpout " placeholder="Lieu sur le littoral"  required> -->
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>   
+                                </div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                            <button type="submit" class="btn">Partager</button>
                             </div>
                         </form>
                     </div>
