@@ -91,18 +91,19 @@
 
                         </p>
                         <div class="medias">
-                            <!-- Pour photo -->
-                            <div class="media-post">
-                                <img src="{{Storage::url($public->src)}}" alt="">
-
-                            </div>
-                            
-                            <!-- Pour vidéo -->
-                            <!-- <div class="media-post">
-                                <video controls>
-                                    <source src="#" type="video/mp4">
-                                </video>
-                            </div> -->
+                            @if ($public->type=='photo')
+                                <!-- Pour photo -->
+                                <div class="media-post">
+                                    <img src="{{Storage::url($public->src)}}" alt="">
+                                </div>
+                            @else
+                                 <!-- Pour vidéo -->
+                                <div class="media-post">
+                                    <video controls>
+                                        <source src="{{Storage::url($public->src)}}" type="video/mp4">
+                                    </video>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
