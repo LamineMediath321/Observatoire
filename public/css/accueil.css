@@ -69,12 +69,7 @@ body{
 .navigation ul li:hover a svg path{
     fill: #fff;
 }
-/* .navigation ul li:active a .item-text{
-    color: #D27C2C;
-}
-.navigation ul li:active a svg path{
-    fill: #D27C2C;
-} */
+
 .navigation ul li a{
     position: relative;
     display: block;
