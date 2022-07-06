@@ -71,6 +71,31 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $photos = Donnee::with('user')
+            ->where('user_id', Auth::id())
+            ->where('type', 'photo')
+            ->where('status', 'stock')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+
+        $videos = Donnee::with('user')
+            ->where('user_id', Auth::id())
+            ->where('type', 'video')
+            ->where('status', 'stock')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+        return view('dashboard', [
+            'photos' => $photos,
+            'videos' => $videos
+        ]);
+    }
+
+    public function delete($id)
+    {
+        Donnee::where('id', $id)
+            ->delete();
+
+        return Redirect::route('dashboard');
     }
 }
