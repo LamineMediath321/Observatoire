@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('app_home');
 Route::post('/publier', [HomeController::class, 'publier'])->name('publier');
+Route::post('/stocker', [HomeController::class, 'stocker'])->name('stocker');
 Route::get('/delete/{id}', [HomeController::class, 'delete'])->name('delete');
 
 
