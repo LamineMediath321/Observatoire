@@ -41,6 +41,8 @@
                             <h5 class="modal-title" id="exampleModalLabel">Ajout Média</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <!-- espace de poste utilisateur -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
                         <form method="POST" action="{{route('stocker')}} " enctype="multipart/form-data">
                              @csrf
                             <div class="modal-body">
@@ -75,8 +77,8 @@
                                                 <path d="M9 13H15M9 17H12M4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8.342C20 8.07556 19.9467 7.81181 19.8433 7.56624C19.7399 7.32068 19.5885 7.09824 19.398 6.912L14.958 2.57C14.5844 2.20466 14.0826 2.00007 13.56 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V4Z" stroke="#FFD233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <path d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20" stroke="#FFD233" stroke-width="2" stroke-linejoin="round"/>
                                             </svg>   
-                                            <input type="file" id="file"  hidden/>
-                                            <label for="file" class="ml-3">Document</label> 
+                                           <input name="documents" type="file" id="documents"  hidden/>
+                                        <label for="documents" class="ml-3">Document</label> 
                                     </div>
                                 </div>
                                 

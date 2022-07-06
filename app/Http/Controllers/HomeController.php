@@ -70,12 +70,21 @@ class HomeController extends Controller
         return Redirect::route('app_home');
     }
 
+    /**Faire une publication sur les donnees stocker */
+    public function publier_by(Donnee $donnee)
+    {
+        $donnee->status = 'publique';
+        $donnee->save();
+
+        return Redirect::route('app_home');
+    }
+
 
     /**Stocker dans son espace propre */
     public function stocker(Request $request)
     {
 
-        if (!$request->photo && !$request->video) {
+        if (!$request->photo && !$request->video && !$request->documents) {
             $request->validate([
                 'lieu' => 'required',
                 'description' => 'required',
@@ -100,6 +109,14 @@ class HomeController extends Controller
                 'public'
             );
             $type = 'video';
+        } else {
+            $filename = time() . '.' . $request->documents->extension();
+            $path = $request->file('documents')->storeAs(
+                'documents',
+                $filename,
+                'public'
+            );
+            $type = 'document';
         }
 
         $donnee = new Donnee();
@@ -110,6 +127,7 @@ class HomeController extends Controller
         $donnee->description = $request->description;
         $donnee->status = 'stock';
         $donnee->lieu = $request->lieu;
+
 
 
         $donnee->save();
@@ -136,9 +154,18 @@ class HomeController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
+        $documents = Donnee::with('user')
+            ->where('user_id', Auth::id())
+            ->where('type', 'documents')
+            ->where('status', 'stock')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+
         return view('dashboard', [
             'photos' => $photos,
-            'videos' => $videos
+            'videos' => $videos,
+            'documents' => $documents
         ]);
     }
 
