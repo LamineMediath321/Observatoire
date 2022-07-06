@@ -18,10 +18,10 @@ Route::get('/', [HomeController::class, 'index'])->name('app_home');
 Route::post('/publier', [HomeController::class, 'publier'])->name('publier');
 Route::get('/publier/{donnee}', [HomeController::class, 'publier_by'])->name('publier_by');
 Route::post('/stocker', [HomeController::class, 'stocker'])->name('stocker');
+Route::post('/partager', [HomeController::class, 'partager'])->name('partager');
 Route::get('/delete/{id}', [HomeController::class, 'delete'])->name('delete');
 
 
-
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/partager', [HomeController::class, 'dashboardPartager'])->name('dashboardPartager');
 
 require __DIR__ . '/auth.php';
