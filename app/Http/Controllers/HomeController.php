@@ -164,6 +164,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
+
         return view('dashboard', [
             'photos' => $photos,
             'videos' => $videos,
@@ -181,26 +182,24 @@ class HomeController extends Controller
 
     public function partagePage()
     {
-        $photos = Donnee::with('user')
-            ->where('user_id', Auth::id())
+
+        $photos = Donnee::leftJoin('partagers', 'donnees.id', '=', 'partagers.donnee_id')
+            ->where('partagers.beneficiaire_id', Auth::id())
             ->where('type', 'photo')
-            ->where('status', 'stock')
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('partagers.created_at', 'DESC')
             ->get();
 
 
-        $videos = Donnee::with('user')
-            ->where('user_id', Auth::id())
+        $videos = Donnee::leftJoin('partagers', 'donnees.id', '=', 'partagers.donnee_id')
+            ->where('partagers.beneficiaire_id', Auth::id())
             ->where('type', 'video')
-            ->where('status', 'stock')
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('partagers.created_at', 'DESC')
             ->get();
 
-        $documents = Donnee::with('user')
-            ->where('user_id', Auth::id())
+        $documents = Donnee::leftJoin('partagers', 'donnees.id', '=', 'partagers.donnee_id')
+            ->where('partagers.beneficiaire_id', Auth::id())
             ->where('type', 'documents')
-            ->where('status', 'stock')
-            ->orderBy('created_at', 'DESC')
+            ->orderBy('partagers.created_at', 'DESC')
             ->get();
 
         return view('layouts/partage', [
@@ -209,7 +208,7 @@ class HomeController extends Controller
             'documents' => $documents
         ]);
     }
-    
+
     public function partager(Request $request)
     {
         $request->validate([
@@ -234,3 +233,4 @@ class HomeController extends Controller
     }
 
 }
+
