@@ -40,6 +40,15 @@
     outline: none;
     border: none;
 }
+#lieuLit {
+    color: #000;
+}
+#titre {
+    color: #000;
+}
+#desc {
+    color: #000;
+}
 .outpout::placeholder{
     color: #0000007e;
 }
@@ -72,4 +81,8 @@ label{
  
     background: url(/images/ep_close-bold.png) !important;
     
+}
+label{
+    font-size: 6px;
+    margin-top: -2rem;
 }
