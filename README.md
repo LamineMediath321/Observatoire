@@ -19,7 +19,7 @@ php artisan serve
 ```
 
 
-## Author
+## Authors
 * Lamine DIAME
 * Boubacar Diallo 
 * Mame Awa Bousso Diouf
