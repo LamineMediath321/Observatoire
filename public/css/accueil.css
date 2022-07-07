@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-*
-{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 
 }
-body{
+
+body {
     overflow-x: hidden;
     background: #ecebeba1;
 }
+
 /* .container {
     margin: 0;
     padding: 0;
@@ -21,14 +22,15 @@ body{
 
 
 /* CSS Navigation DEBUT */
-.navigation{
+.navigation {
     position: fixed;
     width: 260px;
     height: 100%;
     background: #fff;
     /* transition: 0.5s; */
 }
-.navigation .logo{
+
+.navigation .logo {
     position: absolute;
     top: -25px;
     /* display: block; */
@@ -36,41 +38,49 @@ body{
     height: 134px;
     margin-left: 40px;
 }
-.navigation .logo img{
+
+.navigation .logo img {
     width: 100%;
     height: 100%;
 }
-.navigation ul{
+
+.navigation ul {
     position: absolute;
     top: 130px;
     left: 0;
     width: 100%;
     padding-left: 0;
 }
-.navigation ul li{
+
+.navigation ul li {
     position: relative;
     width: 100%;
     list-style: none;
     padding: 15px 0;
     cursor: pointer;
 }
-.navigation ul li:hover{
+
+.navigation ul li:hover {
     background: #d27c2c;
 }
-.navigation ul li.active a .item-text{
+
+.navigation ul li.active a .item-text {
     color: #d27c2c;
 }
-.navigation ul li.active a svg path{
+
+.navigation ul li.active a svg path {
     fill: #d27c2c;
 }
-.navigation ul li:hover a .item-text{
+
+.navigation ul li:hover a .item-text {
     color: #fff;
 }
-.navigation ul li:hover a svg path{
+
+.navigation ul li:hover a svg path {
     fill: #fff;
 }
 
-.navigation ul li a{
+.navigation ul li a {
     position: relative;
     display: block;
     width: 100%;
@@ -79,7 +89,8 @@ body{
     /* color: #fff; */
     padding-left: 2rem;
 }
-.navigation ul li a svg{
+
+.navigation ul li a svg {
     position: relative;
     display: block;
     min-width: 25px;
@@ -88,7 +99,8 @@ body{
     /* line-height: 60px; */
     text-align: center;
 }
-.navigation ul li a .item-text{
+
+.navigation ul li a .item-text {
     position: relative;
     display: block;
     padding: 0 15px;
@@ -97,6 +109,7 @@ body{
     color: black;
     /* white-space: nowrap; */
 }
+
 /* CSS Navigation FIN */
 
 /* CSS Content Début */
@@ -108,301 +121,354 @@ body{
     /* background: #d5dce0b0;
     transition: 0.5s; */
 }
-    /* Top bar Début */
-        .container .topbar {
-            position: fixed;
-            width: 100%;
-            background: #fff;
-            height: 68px;
-            padding: 0 10px;
-            display: flex;
-            /* justify-content: space-between; */
-            align-items: center;
-            z-index: 1;
-        }
-        .search {
-            position: relative;
-            width: 54%;
-            margin: 10px 0 0 21px;
-            /* margin-top: 10px; */
-        }
-        .search label {
-            position: relative;
-            width: 100%;
-        }
-        .search label svg{
-            position: absolute;
-            left: 15px;
-            top: 12px;
-            width: 20px;
-            height: 20px;
-        } 
-        .search label input{
-            width: 100%;
-            height: 40px;
-            border-radius: 15px;
-            padding: 5px 45px;
-            outline: none;
-            border: 1px solid #8a8a8a5e;
-        }
-        .container .topbar .boutonInscrip{
-            position: relative;
-            display: flex;
-            margin-left: 3.5rem;
-            margin-bottom: 5px;
-            z-index: 1;
-        }
-        .boutonInscrip a{
-            border-radius: 10px;
-        }
-        .boutonInscrip button{
-            background: #d27c2c;
-            border-radius: 10px;
-            margin-left: 5rem;
-            color: #fff;
-        }
-        .boutonInscrip a:first-child{
-            margin-right: 10px;
-        }
-        .inscription{
-            background: #d27c2c;
-            color: #fff;
-        }
-        .connexion{
-            border: 1px solid #d27c2c;
-        }
-        .connexion:hover{
-            background: #d27c2c;
-            color: #fff;
-        }
-    /* Top bar FIN */
 
-    /* Main Début */
-    .main-side{
-        position: relative;
-        width: 100%;
-        display: flex;
-        
-    }
-    .main-side .mainPosts{
-        position: relative;
-        width: 66%;
-        height: 100%;
-        /* padding: 20px; */
-        padding: 4rem 1.5rem 1rem 1.5rem;
-    }
-    .main-side .mainPosts .card-user-connected{
-        position: relative;
-        width: 98.5%;
-        height: 205px;
-        margin: 20px 8px 5px;
-        background: #fff;
-        border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-    .user{
-        margin-left: -20px;
-        padding: 12px 0 0;
-        display: flex;
-    }
-    .main-side .mainPosts .card-user-connected .user .photo{
-        position: relative;
-        width: 30px;
-        height: 30px;
-        overflow: hidden;
-        border-radius: 50%;
-        cursor: pointer;
-        background: black;
-        /* margin: 30px 20px; */
-    }
-    .details-user .name-user{
-        position: relative;
-        display: flex;
-        font-size: 11px;
-        margin-left: 7px;
-    }
-    .details-user .porte-post{
-        margin-top: 1px;
-    }
-    .text-porte{
-        font-size: 8.5px;
-        color: #8A8A8A;
-    }
-    #lieu{
-        font-size: 10px;
-        border: none;
-        outline: none;
-        margin-top: -2px;
-        padding-left: 2px;
-    }
-    #lieu::placeholder{
-        font-size: 10px;
-        color: #8A8A8A;
+/* Top bar Début */
+.container .topbar {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    height: 68px;
+    padding: 0 10px;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    z-index: 1;
+}
 
-    }
-    .qd9 .queDire{
-        width: 600px;
-        height: 100px;
-        margin: 10px 35px;
-        padding: 10px;
-        border: none;
-        border-bottom: 1px solid #a5a4a479;
-        outline: none;
-        flex-wrap: wrap;
-    }
-    .qd9 .queDire::placeholder{
-        padding-left: 10px;
-        color: #8A8A8A;
-    }
-    .medias .media label{
-        font-size: 15px;
-        margin-top: -3px;
-    }
-    .photo {
-        margin-left: 3rem;
-        margin-top: -2.5px;
-    }
-    .media {
-        margin-left: 5rem;
-    }
-    .publier{
-        margin-top: -2.5px;
-        margin-left: 5rem;
-    }
-    .publier input{
-        background: #00C0FD;
-        width: 80px;
-        height: 30px;
-        color: #fff;
-        border: none;
-        border-radius: 20px;
-        outline: none;
-    }
-    /* css user post */
-    .main-side .mainPosts .user-post{
-        position: relative;
-        width: 98.5%;
-        height: 30%;
-        margin: 22px 8px;
-        padding-bottom: 5px;
-        background: #fff;
-        border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-    .main-side .mainPosts .user-post .user .photo{
-        position: relative;
-        width: 30px;
-        height: 30px;
-        overflow: hidden;
-        border-radius: 50%;
-        cursor: pointer;
-        background: #d27c2c;
-    }
-    .details-user .text-porte{
-        font-size: 10px;
-        margin-top: -2px;
-    }
-    .post{
-        width: 660px;
-        /* height: 280px; */
-        margin: 10px 65px;
-        flex-basis: auto;
-    }
-    .post .desc-post{
-        font-size: 12px;
-        width: 600px;
-        height: auto;
-    }
-    .post .medias{
-        width: 600px;
-        display: flex;
-        flex-wrap: wrap;
-        height: 25rem;
-        padding-bottom: 8px;
-        
-    }
-    .post .medias .media-post{
-        flex: 1 1 10em;
-        width: auto;
-        height: 100%;
-        margin: 0 10px 0 0;
-    }
-    .media-post img{
-        width: 70%;
-        height: 100%;
-    }
-    .media-post video{
-        width: 100%;
-        height: 100%;
-    }
-        /* Side bar Début */
-        .main-side .sideBar {
-            position: relative;
-            /* right: 0; */
-            width: 40%;
-            height: 100%;
-            background: #fff;
-            /* padding: 20px; */
-            margin-right: 5rem;
-            padding-top: 4rem;
-        }
-        .head-actualite{
-            display: flex;
-            justify-content: space-between;
-            margin: 10px 20px 0;
-        }
-        .sideBar a{
-            text-decoration: none;
-        }
-        .sideBar a:hover{
-            text-decoration: none;
-        }
-        .voirtout span{
-            font-size: 13px;
-            color: #FDC500;
-            text-decoration: none;
-            margin-right: 30px;
-        }
-        .voirtout span:hover{
-            color: #bb9304;
-        }
-        .actualite-post{
-            display: flex;
-            margin: 20px 20px;
-        }
-        .actualite-img{
-            width: 130px;
-            height: 90px;
-            margin-right: 10px;
-        }
-        .actualite-img img{
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-        }
-        .actualite-post .actualite-details{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-        .actualite-details .titre-actu{
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 0 !important;
-        }
-        .actualite-details .lieu-actu{
-            display: flex;
-        }
-        .actualite-details .lieu-actu span{
-            font-size: 12px;
-            margin-left: 4px;
-            color: #00C0FD;
-        }
-        .actualite-details .details{
-            font-size: 13px;
-            color: #FDC500;
-        }
-        /* Side bar FIN */
-    
-    /* Main bar FIN */
+.search {
+    position: relative;
+    width: 54%;
+    margin: 10px 0 0 21px;
+    /* margin-top: 10px; */
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label svg {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    padding: 5px 45px;
+    outline: none;
+    border: 1px solid #8a8a8a5e;
+}
+
+.container .topbar .boutonInscrip {
+    position: relative;
+    display: flex;
+    margin-left: 3.5rem;
+    margin-bottom: 5px;
+    z-index: 1;
+}
+
+.boutonInscrip a {
+    border-radius: 10px;
+}
+
+.boutonInscrip button {
+    background: #d27c2c;
+    border-radius: 10px;
+    margin-left: 5rem;
+    color: #fff;
+}
+
+.boutonInscrip a:first-child {
+    margin-right: 10px;
+}
+
+.inscription {
+    background: #d27c2c;
+    color: #fff;
+}
+
+.connexion {
+    border: 1px solid #d27c2c;
+}
+
+.connexion:hover {
+    background: #d27c2c;
+    color: #fff;
+}
+
+/* Top bar FIN */
+
+/* Main Début */
+.main-side {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+}
+
+.main-side .mainPosts {
+    position: relative;
+    width: 66%;
+    height: 100%;
+    /* padding: 20px; */
+    padding: 4rem 1.5rem 1rem 1.5rem;
+}
+
+.main-side .mainPosts .card-user-connected {
+    position: relative;
+    width: 98.5%;
+    height: 205px;
+    margin: 20px 8px 5px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.user {
+    margin-left: -20px;
+    padding: 12px 0 0;
+    display: flex;
+}
+
+.main-side .mainPosts .card-user-connected .user .photo {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    background: black;
+    /* margin: 30px 20px; */
+}
+
+.details-user .name-user {
+    position: relative;
+    display: flex;
+    font-size: 11px;
+    margin-left: 7px;
+}
+
+.details-user .porte-post {
+    margin-top: 1px;
+}
+
+.text-porte {
+    font-size: 8.5px;
+    color: #8A8A8A;
+}
+
+#lieu {
+    font-size: 10px;
+    border: none;
+    outline: none;
+    margin-top: -2px;
+    padding-left: 2px;
+}
+
+#lieu::placeholder {
+    font-size: 10px;
+    color: #8A8A8A;
+
+}
+
+.qd9 .queDire {
+    width: 600px;
+    height: 100px;
+    margin: 10px 35px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #a5a4a479;
+    outline: none;
+    flex-wrap: wrap;
+}
+
+.qd9 .queDire::placeholder {
+    padding-left: 10px;
+    color: #8A8A8A;
+}
+
+.medias .media label {
+    font-size: 15px;
+    margin-top: -3px;
+}
+
+.photo {
+    margin-left: 3rem;
+    margin-top: -2.5px;
+}
+
+.media {
+    margin-left: 5rem;
+}
+
+.publier {
+    margin-top: -2.5px;
+    margin-left: 17rem;
+}
+
+.publier input {
+    background: #00C0FD;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* css user post */
+.main-side .mainPosts .user-post {
+    position: relative;
+    width: 98.5%;
+    height: 30%;
+    margin: 22px 8px;
+    padding-bottom: 5px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.main-side .mainPosts .user-post .user .photo {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #d27c2c;
+}
+
+.details-user .text-porte {
+    font-size: 10px;
+    margin-top: -2px;
+}
+
+.post {
+    width: 660px;
+    /* height: 280px; */
+    margin: 10px 65px;
+    flex-basis: auto;
+}
+
+.post .desc-post {
+    font-size: 12px;
+    width: 600px;
+    height: auto;
+}
+
+.post .medias {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 25rem;
+    padding-bottom: 8px;
+
+}
+
+.post .medias .media-post {
+    flex: 1 1 10em;
+    width: auto;
+    height: 100%;
+    margin: 0 10px 0 0;
+}
+
+.media-post img {
+    width: 70%;
+    height: 100%;
+}
+
+.media-post video {
+    width: 100%;
+    height: 100%;
+}
+
+/* Side bar Début */
+.main-side .sideBar {
+    position: relative;
+    /* right: 0; */
+    width: 40%;
+    height: 100%;
+    background: #fff;
+    /* padding: 20px; */
+    margin-right: 5rem;
+    padding-top: 4rem;
+}
+
+.head-actualite {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 0;
+}
+
+.sideBar a {
+    text-decoration: none;
+}
+
+.sideBar a:hover {
+    text-decoration: none;
+}
+
+.voirtout span {
+    font-size: 13px;
+    color: #FDC500;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.voirtout span:hover {
+    color: #bb9304;
+}
+
+.actualite-post {
+    display: flex;
+    margin: 20px 20px;
+}
+
+.actualite-img {
+    width: 130px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+.actualite-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.actualite-post .actualite-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.actualite-details .titre-actu {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 0 !important;
+}
+
+.actualite-details .lieu-actu {
+    display: flex;
+}
+
+.actualite-details .lieu-actu span {
+    font-size: 12px;
+    margin-left: 4px;
+    color: #00C0FD;
+}
+
+.actualite-details .details {
+    font-size: 13px;
+    color: #FDC500;
+}
+
+/* Side bar FIN */
+
+/* Main bar FIN */
 /* CSS Content FIN */
