@@ -23,7 +23,7 @@ body{
 /* CSS Navigation DEBUT */
 .navigation{
     position: fixed;
-    width: 280px;
+    width: 250px;
     height: 100%;
     background: #fff;
     /* transition: 0.5s; */
@@ -102,7 +102,7 @@ body{
     position: absolute;
     width: calc(100% - 100px);
     min-height: 100%;
-    left: 260px;
+    left: 230px;
     /* background: #d5dce0b0;
     transition: 0.5s; */
 }
@@ -158,3 +158,346 @@ body{
         margin-right: 10px;
     }
 /* Top bar FIN */
+
+    /* Main Début */
+    .main-side{
+        position: relative;
+        width: 100%;
+        display: flex;
+    }
+    .main-side .mainForum{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /* padding: 20px; */
+        padding: 4rem 1.5rem 1rem 1.5rem;
+    }
+    .main-side .mainForum .les-medias{
+        position: relative;
+        height: 100%;
+        margin: 1rem 7rem 0 0;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
+    }
+    .les-medias .head-forum button{
+        margin-left: 15rem;
+    }
+    .badge-forum{
+        margin-top: 3rem;
+    }
+    .badge-forum h1{
+        font-size: 30px;
+        font-weight: 600;
+        margin-left: 13px;
+    }
+/* espace création Forum */
+    .main-side .mainForum .les-medias .card-user-connected{
+        position: relative;
+        width: 85%;
+        height: 205px;
+        margin: 17px .5rem 5px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .user{
+        margin-left: -20px;
+        padding: 12px 0 0;
+        display: flex;
+    }
+    .main-side .mainForum .les-medias .card-user-connected .user .photo{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 50%;
+        cursor: pointer;
+        background: #8A8A8A;
+    }
+    .details-user .name-user{
+        position: relative;
+        display: flex;
+        font-size: 11px;
+        margin-left: 7px;
+    }
+    .details-user .porte-post{
+        margin-top: 1px;
+    }
+    .text-porte{
+        font-size: 8.5px;
+        color: #8A8A8A;
+    }
+    #lieu{
+        font-size: 10px;
+        border: none;
+        outline: none;
+        margin-top: -2px;
+        padding-left: 2px;
+    }
+    #lieu::placeholder{
+        font-size: 10px;
+        color: #8A8A8A;
+
+    }
+    .create-theme .theme{
+        width: 580px;
+        height: 50px;
+        margin: 10px 40px;
+        padding: 10px;
+        padding-left: 0;
+        border: none;
+        border-bottom: 1px solid #a5a4a479;
+        outline: none;
+    }
+    .create-theme textarea{
+        width: 580px;
+        height: 50px;
+        margin: 10px 40px;
+        padding-left: 5px;
+        border: none;
+        border-bottom: 1px solid #a5a4a479;
+        outline: none;
+        overflow: auto;
+        /* -webkit-box-shadow: none; */
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .create-theme .theme::placeholder{
+        padding-left: 5px;
+        color: #8A8A8A;
+    }
+    .create-theme textarea::placeholder{
+        /* padding-left: 5px; */
+        color: #8A8A8A;
+    }
+    .head-forum .entete{
+        margin: 10px 0 0 20px;
+    }
+    .head-forum .entete h1{
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 7px;
+    }
+    .head-forum .entete p{
+        width: 400px;
+        font-size: 13px;
+    }
+    .illustration{
+        width: 220px;
+        margin-left: 16rem;
+    }
+    .illustration img{
+        width: 100%;
+    }
+    .badge-forum{
+       margin-left: 20px;
+    }
+    .badge-forum button{
+        margin-left: 33rem;
+        border: 1px solid #bb9304;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .badge-forum button:hover{
+        background: #d27c2c;
+        color: #fff;
+    }
+    .badge-forum button span{
+        margin-left: 3px;
+        margin-top: 4px;
+    }
+    /* .medias .media label{
+        font-size: 15px;
+        margin-top: -3px;
+    } */
+    .lesForums a{
+        text-decoration: none !important;
+        color: none !important;
+        border-bottom: 1px solid #bbbabaa6;
+        width: 95%;
+        padding: 10px;
+        /* padding-bottom: 10px; */
+        margin-left: 1rem;
+        /* margin-right: 2rem; */
+    }
+    .lesForums a:hover{
+       background: #d4d4d4c5;
+    }
+    .photo {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-left: 0;
+        margin-top: 2.5px;
+        margin-right: 10px;
+        background: rgb(80, 78, 78);
+    }
+    .details {
+        margin-top: 0;
+    }
+    .details h2{
+        font-weight: 500;
+        margin-top: 3px;
+    }
+    .lesForums a .details h2:hover{
+        color: none;
+    }
+    .details .plus-details span{
+        margin-top: 3px;
+        font-size: 12px;
+        color: #8A8A8A;
+
+    }
+    .details .plus-details svg{
+        margin-top: 4px;
+    }
+  
+    .media {
+        margin-left: 5rem;
+    }
+    .publier{
+        margin-top: 6px;
+        margin-right: 2.5rem;
+    }
+    .publier input{
+        background: #d27c2c;
+        width: 200px;
+        height: 35px;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+    }
+
+ /* css les forums */   
+ /* .main-side .mainForum .les-medias .user-post{
+    position: relative;
+    width: 98.5%;
+    height: 30%;
+    margin: 22px 8px;
+    padding-bottom: 5px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.main-side .mainForum .les-medias .lesForums a .photo{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgb(109, 109, 109);
+}
+
+
+.details-user .text-porte{
+    font-size: 10px;
+    margin-top: -2px;
+}
+.post{
+    width: 660px;
+    margin: 10px 65px;
+    flex-basis: auto;
+}
+.post .desc-post{
+    font-size: 12px;
+    width: 600px;
+    height: auto;
+}
+.post .medias{
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 25rem;
+    padding-bottom: 8px;
+    
+}
+.post .medias .media-post{
+    flex: 1 1 10em;
+    width: auto;
+    height: 100%;
+    margin: 0 10px 0 0;
+}
+.media-post img{
+    width: 70%;
+    height: 100%;
+}
+.media-post video{
+    width: 100%;
+    height: 100%;
+} */
+
+     /* Side bar Début */
+     .main-side .sideBar {
+        position: fixed;
+        right: 0;
+        width: 23%;
+        height: 100%;
+        background: #fff;
+        /* padding: 20px; */
+        /* margin-right: 8rem; */
+        padding-top: 4rem;
+    }
+    /* .head-forums{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 20px 0;
+    } */
+    /* .sideBar a{
+        text-decoration: none;
+    }
+    .sideBar a:hover{
+        text-decoration: none;
+    }
+    .voirtout span{
+        font-size: 13px;
+        color: #FDC500;
+        text-decoration: none;
+        margin-right: 30px;
+    }
+    .voirtout span:hover{
+        color: #bb9304;
+    }
+    .actualite-post{
+        display: flex;
+        margin: 20px 20px;
+    }
+    .actualite-img{
+        width: 130px;
+        height: 90px;
+        margin-right: 10px;
+    }
+    .actualite-img img{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .actualite-post .actualite-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 7px;
+    }
+    .actualite-details .titre-actu{
+        font-size: 11px;
+        font-weight: 600;
+        margin-bottom: 0 !important;
+    }
+    .actualite-details .lieu-actu{
+        display: flex;
+    }
+    .actualite-details .lieu-actu span{
+        font-size: 12px;
+        margin-left: 4px;
+        color: #00C0FD;
+    }
+    .actualite-details .details{
+        font-size: 11px;
+        color: #FDC500;
+    } */
+    /* Side bar FIN */
