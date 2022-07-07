@@ -230,6 +230,9 @@ a {
     .oneCard video{
         border-radius: 20px 20px 0 0;
     }
+    .oneCard img{
+        height: 170px !important;
+    }
     #document{
         margin-left: 5px;
     }

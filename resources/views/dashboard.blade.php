@@ -155,8 +155,8 @@
                 <h4>Documents</h4>
                 <div class="list-of-medias">
                     @foreach ($documents as $document)
-                         <div class="card oneCard"  style="width: 210px;" data-bs-toggle="modal" data-bs-target="#exampleModal_">
-                        <img id="example1" src="/images/beau-bord-mer.webp" class="card-img-top" alt="">
+                    <div class="card oneCard"  style="width: 210px;" data-bs-toggle="modal" data-bs-target="#exampleModal_{{$document->id}}">
+                        <img id="example1" src="/images/img_doc.webp" class="card-img-top" alt="">
                         <div class="card-body ">
                             <svg width="13" height="13" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.74992 14.0833H16.2499M9.74992 18.4167H12.9999M4.33325 4.33332V21.6667C4.33325 22.2413 4.56153 22.7924 4.96785 23.1987C5.37418 23.605 5.92528 23.8333 6.49992 23.8333H19.4999C20.0746 23.8333 20.6257 23.605 21.032 23.1987C21.4383 22.7924 21.6666 22.2413 21.6666 21.6667V9.03716C21.6666 8.74851 21.6088 8.46279 21.4968 8.19675C21.3849 7.93072 21.2208 7.68975 21.0144 7.48799L16.2044 2.78416C15.7996 2.38837 15.256 2.16673 14.6899 2.16666H6.49992C5.92528 2.16666 5.37418 2.39493 4.96785 2.80126C4.56153 3.20759 4.33325 3.75869 4.33325 4.33332V4.33332Z" stroke="#0FA958" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -174,7 +174,7 @@
                                         <path d="M10 5H14C14 4.46957 13.7893 3.96086 13.4142 3.58579C13.0391 3.21071 12.5304 3 12 3C11.4696 3 10.9609 3.21071 10.5858 3.58579C10.2107 3.96086 10 4.46957 10 5ZM8.5 5C8.5 4.54037 8.59053 4.08525 8.76642 3.66061C8.94231 3.23597 9.20012 2.85013 9.52513 2.52513C9.85013 2.20012 10.236 1.94231 10.6606 1.76642C11.0852 1.59053 11.5404 1.5 12 1.5C12.4596 1.5 12.9148 1.59053 13.3394 1.76642C13.764 1.94231 14.1499 2.20012 14.4749 2.52513C14.7999 2.85013 15.0577 3.23597 15.2336 3.66061C15.4095 4.08525 15.5 4.54037 15.5 5H21.25C21.4489 5 21.6397 5.07902 21.7803 5.21967C21.921 5.36032 22 5.55109 22 5.75C22 5.94891 21.921 6.13968 21.7803 6.28033C21.6397 6.42098 21.4489 6.5 21.25 6.5H19.93L18.76 18.611C18.6702 19.539 18.238 20.4002 17.5477 21.0268C16.8573 21.6534 15.9583 22.0004 15.026 22H8.974C8.04186 22.0001 7.1431 21.653 6.45295 21.0265C5.7628 20.3999 5.33073 19.5388 5.241 18.611L4.07 6.5H2.75C2.55109 6.5 2.36032 6.42098 2.21967 6.28033C2.07902 6.13968 2 5.94891 2 5.75C2 5.55109 2.07902 5.36032 2.21967 5.21967C2.36032 5.07902 2.55109 5 2.75 5H8.5ZM10.5 9.75C10.5 9.55109 10.421 9.36032 10.2803 9.21967C10.1397 9.07902 9.94891 9 9.75 9C9.55109 9 9.36032 9.07902 9.21967 9.21967C9.07902 9.36032 9 9.55109 9 9.75V17.25C9 17.4489 9.07902 17.6397 9.21967 17.7803C9.36032 17.921 9.55109 18 9.75 18C9.94891 18 10.1397 17.921 10.2803 17.7803C10.421 17.6397 10.5 17.4489 10.5 17.25V9.75ZM14.25 9C14.0511 9 13.8603 9.07902 13.7197 9.21967C13.579 9.36032 13.5 9.55109 13.5 9.75V17.25C13.5 17.4489 13.579 17.6397 13.7197 17.7803C13.8603 17.921 14.0511 18 14.25 18C14.4489 18 14.6397 17.921 14.7803 17.7803C14.921 17.6397 15 17.4489 15 17.25V9.75C15 9.55109 14.921 9.36032 14.7803 9.21967C14.6397 9.07902 14.4489 9 14.25 9Z" fill="#F24E1E"/>
                                     </svg> 
                                 </a>
-                                <a href="" id="share" data-bs-toggle="modal" data-bs-target="#exampleModal_">
+                                <a href="" id="share" data-bs-toggle="modal" data-bs-target="#exampleModal{{$document->id}}">
                                     <svg width="14" height="14" class="share" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M21 12L14 5V9C7 10 4 15 3 20C5.5 16.5 9 14.9 14 14.9V19L21 12Z" fill="#85B6FF"/>
                                     </svg>
@@ -184,16 +184,46 @@
                            
                         </div>
                     </div>
-                    @endforeach
-                   
-                    <!-- Modal Documents -->
-                    <div class="modal fade" id="exampleModal_" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                     <!-- Modal Documents -->
+                    <div class="modal fade" id="exampleModal_{{$document->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" id="dialog-modal">
                             <button type="button" id="bouton-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <embed src="/Documents/Projet_Data_Mining_2.pdf" width="600px" height="600px" type="">
+                            <embed src="{{Storage::url($document->src)}}" width="600px" height="600px" type="">
                         </div>
                     
                     </div>
+
+
+                    <div class="modal fade" id="exampleModal{{$document->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header ">
+                                    <h5 class="modal-title" id="exampleModalLabel">Partager </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <!-- espace pour partager des donnees a d'autres-->
+                                <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                                <form method="POST" action="{{route('partager')}} " enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="modal-body">
+                                        <div class="mt-4 d-flex">
+                                            <input type="text" name="donnee"  value="{{$video->id}}" hidden>
+                                            <input type="email" name="beneficiaire" class="outpout" placeholder="login@example.com" required/>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="submit" class="btn">Partager</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>  
+
+                    @endforeach
+                   
+                   
                 </div>
             </div>
           @endif
