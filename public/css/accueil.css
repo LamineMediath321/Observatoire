@@ -23,7 +23,7 @@ body{
 /* CSS Navigation DEBUT */
 .navigation{
     position: fixed;
-    width: 280px;
+    width: 260px;
     height: 100%;
     background: #fff;
     /* transition: 0.5s; */
@@ -104,7 +104,7 @@ body{
     position: absolute;
     width: calc(100% - 100px);
     min-height: 100%;
-    left: 260px;
+    left: 240px;
     /* background: #d5dce0b0;
     transition: 0.5s; */
 }
@@ -148,15 +148,32 @@ body{
         .container .topbar .boutonInscrip{
             position: relative;
             display: flex;
-            margin-left: 4rem;
+            margin-left: 3.5rem;
             margin-bottom: 5px;
             z-index: 1;
         }
         .boutonInscrip a{
             border-radius: 10px;
         }
+        .boutonInscrip button{
+            background: #d27c2c;
+            border-radius: 10px;
+            margin-left: 5rem;
+            color: #fff;
+        }
         .boutonInscrip a:first-child{
             margin-right: 10px;
+        }
+        .inscription{
+            background: #d27c2c;
+            color: #fff;
+        }
+        .connexion{
+            border: 1px solid #d27c2c;
+        }
+        .connexion:hover{
+            background: #d27c2c;
+            color: #fff;
         }
     /* Top bar FIN */
 
@@ -169,7 +186,7 @@ body{
     }
     .main-side .mainPosts{
         position: relative;
-        width: 70%;
+        width: 66%;
         height: 100%;
         /* padding: 20px; */
         padding: 4rem 1.5rem 1rem 1.5rem;
@@ -224,7 +241,7 @@ body{
 
     }
     .qd9 .queDire{
-        width: 660px;
+        width: 600px;
         height: 100px;
         margin: 10px 35px;
         padding: 10px;
@@ -322,11 +339,11 @@ body{
         .main-side .sideBar {
             position: relative;
             /* right: 0; */
-            width: 30%;
+            width: 40%;
             height: 100%;
             background: #fff;
-            /* padding: 20px;
-            margin-left: 10px; */
+            /* padding: 20px; */
+            margin-right: 5rem;
             padding-top: 4rem;
         }
         .head-actualite{

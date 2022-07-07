@@ -8,13 +8,13 @@
   <div class="boutonInscrip">
    
     @guest
-        <a class="btn btn-primary" href="{{ route('register') }}" role="button">Inscription</a>
-        <a class="btn btn-outline-primary" href="{{ route('login') }}" role="button">Connexion</a>
+        <a class="btn inscription" href="{{ route('register') }}" role="button">Inscription</a>
+        <a class="btn connexion" href="{{ route('login') }}" role="button">Connexion</a>
     @endguest
     @auth
       <form method="POST" action="{{ route('logout') }}">
         @csrf
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn">
           {{ __('Déconnexion') }}
         </button>
       </form>
