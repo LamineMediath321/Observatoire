@@ -20,7 +20,7 @@ php artisan serve
 
 
 ## Author
-Lamine DIAME
-Boubacar Diallo 
-Mame Awa Bousso Diouf
-Pape Fode Diéye
+* Lamine DIAME
+* Boubacar Diallo 
+* Mame Awa Bousso Diouf
+* Pape Fode Diéye
