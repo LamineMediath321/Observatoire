@@ -53,23 +53,26 @@
                                 </button>
                             </div>
                             <div class="lesForums">
+                                @foreach ($forums as $forum)
                                 <a href="" class="d-flex" role="button">
                                     <div class="photo">
                                         <svg width="29" height="29" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.25 9.75C11.25 13.4715 14.2785 16.5 18 16.5C21.7215 16.5 24.75 13.4715 24.75 9.75C24.75 6.0285 21.7215 3 18 3C14.2785 3 11.25 6.0285 11.25 9.75ZM30 31.5H31.5V30C31.5 24.2115 26.7885 19.5 21 19.5H15C9.21 19.5 4.5 24.2115 4.5 30V31.5H30Z" fill="white"/>
                                         </svg>        
                                     </div>
-                                    <div class="details">
-                                        <h2 class="titre-theme">La dégradation du littoral: causes et conséquences</h2>
-                                        <div class="plus-details d-flex">
-                                            <span class="auteur">Créé par Boubs</span>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M8 9.5C8.39782 9.5 8.77936 9.34196 9.06066 9.06066C9.34196 8.77936 9.5 8.39782 9.5 8C9.5 7.60218 9.34196 7.22064 9.06066 6.93934C8.77936 6.65804 8.39782 6.5 8 6.5C7.60218 6.5 7.22064 6.65804 6.93934 6.93934C6.65804 7.22064 6.5 7.60218 6.5 8C6.5 8.39782 6.65804 8.77936 6.93934 9.06066C7.22064 9.34196 7.60218 9.5 8 9.5V9.5Z" fill="#CCCCCC"/>
-                                            </svg>
-                                            <span class="auteur mr-2">Il y a 2h</span>
+                                    
+                                        <div class="details">
+                                            <h2 class="titre-theme">{{$forum->theme}} </h2>
+                                            <div class="plus-details d-flex">
+                                                <span class="auteur">Créé par {{$forum->user->prenom }} {{$forum->user->nom }}</span>
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 9.5C8.39782 9.5 8.77936 9.34196 9.06066 9.06066C9.34196 8.77936 9.5 8.39782 9.5 8C9.5 7.60218 9.34196 7.22064 9.06066 6.93934C8.77936 6.65804 8.39782 6.5 8 6.5C7.60218 6.5 7.22064 6.65804 6.93934 6.93934C6.65804 7.22064 6.5 7.60218 6.5 8C6.5 8.39782 6.65804 8.77936 6.93934 9.06066C7.22064 9.34196 7.60218 9.5 8 9.5V9.5Z" fill="#CCCCCC"/>
+                                                </svg>
+                                                <span class="auteur mr-2">le {{ $forum->created_at->format('d/m/Y')}} à {{ $forum->created_at->format('H:m:s')}}</span>
+                                            </div>
                                         </div>
-                                    </div>
                                 </a>
+                                @endforeach
                             </div>
                         </div>  
                            
@@ -89,11 +92,11 @@
                         </div>
                         <!-- espace de poste utilisateur -->
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                        <form method="POST" action="{{route('stocker')}} " enctype="multipart/form-data">
+                        <form method="POST" action="{{route('create')}} " enctype="multipart/form-data">
                              @csrf
                             <div class="modal-body">
                                 <div class="mt-4 d-flex">
-                                    <input type="text" name="titre" id="titre" class="outpout" placeholder="Thème"  required>   
+                                    <input type="text" name="theme" id="titre" class="outpout" placeholder="Thème"  required>   
                                 </div>
                                 <div class="mt-4 d-flex">
                                     <input type="text" name="description" id="desc" class="outpout" placeholder="Description"  required>   
@@ -111,63 +114,4 @@
        
     </body>
 </html>
- <!-- @auth
-                           
-                            <form method="POST" action="{{route('publier')}}" class="card-user-connected" enctype="multipart/form-data">
-                                    @csrf
-                                <div class="user">
-        
-                                    <div class="create-theme">
-                                            <input name="titre" type="text" id="theme" class="theme" placeholder="Sujet de discussion" required>
-                                            <textarea name="description" id="description" class="desc" placeholder="Description" required></textarea>
-                                            <div class="medias d-flex">
-                                               
-                                                <div class="publier">
-                                                    <input type="submit" id="publier" value="Lancer la discussion">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </form>
-                            @endauth
-                            <div class="user-post">
-                                <div class="user">
-                                    <div class="photo">
-                                        <svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.25 9.75C11.25 13.4715 14.2785 16.5 18 16.5C21.7215 16.5 24.75 13.4715 24.75 9.75C24.75 6.0285 21.7215 3 18 3C14.2785 3 11.25 6.0285 11.25 9.75ZM30 31.5H31.5V30C31.5 24.2115 26.7885 19.5 21 19.5H15C9.21 19.5 4.5 24.2115 4.5 30V31.5H30Z" fill="white"/>
-                                        </svg>        
-                                    </div>
-                                    <div class="details-user">
-                                        <div class="name-user"><span id="prenom">Boubs </span> <span class="nom ml-1">Diallo</span></div>
-                                        <div class="porte-post d-flex ml-1">
-                                            <svg width="11.5" height="11.5" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M9.50004 1.78125C7.94421 1.78125 6.45211 2.3993 5.35197 3.49943C4.25184 4.59957 3.63379 6.09167 3.63379 7.6475V7.6475V8.075C3.87129 11.2892 6.53921 13.874 9.50004 17.2188C12.5915 13.7275 15.3663 11.0833 15.3663 7.6475C15.3663 6.09167 14.7482 4.59957 13.6481 3.49943C12.548 2.3993 11.0559 1.78125 9.50004 1.78125ZM9.50004 4.82917C10.0584 4.82917 10.6042 4.99479 11.0684 5.30509C11.5326 5.61538 11.8944 6.05639 12.1079 6.57233C12.3214 7.08827 12.377 7.65594 12.2678 8.20352C12.1586 8.7511 11.8894 9.25397 11.4943 9.64852C11.0992 10.0431 10.5959 10.3116 10.0482 10.42C9.50048 10.5285 8.93289 10.472 8.41725 10.2578C7.90161 10.0436 7.4611 9.6812 7.15146 9.21656C6.84182 8.75191 6.67696 8.20586 6.67775 7.6475C6.6788 6.89967 6.97661 6.18282 7.50578 5.6544C8.03494 5.12597 8.75221 4.82917 9.50004 4.82917Z" stroke="#8A8A8A" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                            <span class="text-porte ml-1"> Ndar </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <p class="desc-post">
-                                        lorem ipsum
-
-                                    </p>
-                                    <div class="medias">
-                                        
-                                            
-                                            <div class="media-post">
-                                                <img src="#" alt="">
-                                            </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
- <!-- <div class="photo d-flex">
-                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M22 16V4C22 2.9 21.1 2 20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16ZM11 12L13.03 14.71L16 11L20 16H8L11 12ZM2 6V20C2 21.1 2.9 22 4 22H18V20H4V6H2Z" fill="#0FA958"/>
-                                                    </svg>
-                                                    <input type="file" id="photo" name="photo"  hidden/>
-                                                    <label for="photo" class="ml-3">Photo</label>
-                                                </div>
-                                                 -->
+ 
