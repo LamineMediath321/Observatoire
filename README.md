@@ -19,6 +19,8 @@ php artisan serve
 php artisan storage:link
 ```
 
+## Il va fallaoir creer une base de donnees nommée observatoire
+
 
 ## Authors
 * Lamine DIAME
