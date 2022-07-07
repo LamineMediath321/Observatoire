@@ -141,7 +141,7 @@ a {
             background: none;
             border: none;
         }
-        .boutons-navig .navig-bouton:first-child a{
+        .boutons-navig .navig-bouton:first-child #mesDossiers{
             border-bottom: 1px solid #00C0FD;
         }
         .navig-bouton a svg{
