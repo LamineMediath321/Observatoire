@@ -24,7 +24,9 @@ Route::get('/delete/{id}', [HomeController::class, 'delete'])->name('delete');
 Route::get('/partagePage', [HomeController::class, 'partagePage'])->name('partagePage');
 Route::get('/forum', [ForumController::class, 'forum'])->name('forum');
 
-Route::get('/commentsForum', [ForumController::class, 'commentsForum'])->name('commentsForum');
+Route::get('/commentsForum/{forum}', [ForumController::class, 'commentsForum'])->middleware(['auth'])->name('commentsForum');
+Route::post('/commenter', [ForumController::class, 'commenter'])->middleware(['auth'])->name('commenter');
+
 
 
 Route::get('/dashboard/partager', [HomeController::class, 'dashboardPartager'])->name('dashboardPartager');

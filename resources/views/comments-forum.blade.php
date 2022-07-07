@@ -13,8 +13,8 @@
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="css/forum.css">
-        <link rel="stylesheet" href="css/comments.css">
+        <link rel="stylesheet" href="{{asset('css/forum.css')}}">
+        <link rel="stylesheet" href="{{asset('css/comments.css')}}">
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -31,9 +31,9 @@
                             <div class="card bg-dark text-white">
                                 <img src="/images/back1_littoral.webp" class="card-img" alt="...">
                                 <div class="card-img-overlay">
-                                    <h5 class="card-title">Titre Thème</h5>
-                                    <p class="card-text" id="desc-theme">Description Thème: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <p class="card-text" id="date">Créé le 22 Juin 2022</p>
+                                    <h5 class="card-title">{{$forum->theme}} </h5>
+                                    <p class="card-text" id="desc-theme">{{$forum->description}} </p>
+                                    <p class="card-text" id="date">Créé le {{ $forum->created_at->format('d-m-Y')}} à {{ $forum->created_at->format('H:m:s')}}</p>
                                 </div>
                             </div>
                             <div class="badge-forum d-flex mb-4">
@@ -49,12 +49,17 @@
                                     </svg>        
                                 </div>
                                 <div class="espaceComment d-flex">
-                                    <input type="text" placeholder="Ce commentaire sera rendu publique une fois publié">
-                                    <input type="submit" value="Poster">
+                                    <form method="POST" action="{{route('commenter')}}">
+                                        @csrf
+                                         <input type="text" name="forum_id" value="{{$forum->id}}" hidden>
+                                        <input type="text" name="comment" placeholder="Ce commentaire sera rendu publique une fois publié" required>
+                                        <input type="submit" value="Poster">
+                                    </form>
                                  </div>
                             </div>
                             <div class="lesForums">
                                 <!-- Un commentaire d'un utilisateur -->
+                                @foreach ($forum->commentaires as $comment)
                                 <div class="comment-details">
                                     <div class="d-flex oneComment">
                                         <div class="photo">
@@ -62,24 +67,25 @@
                                                 <path d="M11.25 9.75C11.25 13.4715 14.2785 16.5 18 16.5C21.7215 16.5 24.75 13.4715 24.75 9.75C24.75 6.0285 21.7215 3 18 3C14.2785 3 11.25 6.0285 11.25 9.75ZM30 31.5H31.5V30C31.5 24.2115 26.7885 19.5 21 19.5H15C9.21 19.5 4.5 24.2115 4.5 30V31.5H30Z" fill="white"/>
                                             </svg>        
                                         </div>
+                                        
                                         <div class="espaceComment d-flex">
-                                            <p class="unCommentaire">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            </p>
+                                                 <p class="unCommentaire">
+                                                    {{$comment->description}}
+                                                </p>
                                         </div>
                                         
                                     </div>
                                     <div class="details">
                                         <div class="plus-details d-flex">
-                                            <span class="auteur">publié par Boubs</span>
+                                            <span class="auteur">{{$comment->user->prenom}} {{$comment->user->nom}}</span>
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M8 9.5C8.39782 9.5 8.77936 9.34196 9.06066 9.06066C9.34196 8.77936 9.5 8.39782 9.5 8C9.5 7.60218 9.34196 7.22064 9.06066 6.93934C8.77936 6.65804 8.39782 6.5 8 6.5C7.60218 6.5 7.22064 6.65804 6.93934 6.93934C6.65804 7.22064 6.5 7.60218 6.5 8C6.5 8.39782 6.65804 8.77936 6.93934 9.06066C7.22064 9.34196 7.60218 9.5 8 9.5V9.5Z" fill="#CCCCCC"/>
                                             </svg>
-                                            <span class="auteur mr-2">Il y a 2h</span>
+                                            <span class="auteur mr-2">{{ $comment->created_at->format('d-m-Y')}}</span>
                                         </div>
                                     </div>
                                 </div>
-                  
+                                @endforeach 
                             </div>
                         </div>  
                            

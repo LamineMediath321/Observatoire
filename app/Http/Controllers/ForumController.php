@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commentaire;
 use App\Models\Forum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,10 +35,31 @@ class ForumController extends Controller
 
         return Redirect::route('forum');
     }
-    
-    public function commentsForum()
+
+    public function commentsForum(Forum $forum)
     {
 
-        return view('comments-forum');
+        return view('comments-forum', [
+            'forum' => $forum
+        ]);
+    }
+
+    public function commenter(Request $request)
+    {
+        $request->validate([
+            'comment' => 'required'
+        ]);
+
+        $comment = Commentaire::create([
+            'user_id' => Auth::id(),
+            'forum_id' => $request->forum_id,
+            'description' => $request->comment,
+        ]);
+
+        $comment->save();
+
+        return Redirect::route('commentsForum', [
+            'forum' => $request->forum_id
+        ]);
     }
 }
