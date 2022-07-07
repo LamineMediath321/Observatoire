@@ -11,4 +11,10 @@ class ForumController extends Controller
 
         return view('forum');
     }
+    
+    public function commentsForum()
+    {
+
+        return view('comments-forum');
+    }
 }

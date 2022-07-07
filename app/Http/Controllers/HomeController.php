@@ -233,3 +233,4 @@ class HomeController extends Controller
         return Redirect::route('dashboard');
     }
 
+}

@@ -1,0 +1,99 @@
+.card::before{
+    content: '';
+    position: absolute;
+    /* border-radius: 20px; */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #00000063;
+}
+.card-img{
+    height: 250px !important;
+}
+.card-title{
+    font-size: 3rem;
+}
+#desc-theme{
+    width: 600px;
+    font-size: 15px;
+    margin-bottom: 2.5rem;
+}
+#date{
+    font-size: 13px;
+}
+#title-comments{
+    margin-left: 10px;
+}
+
+.myComment{
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.myphoto {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #c77c0c;
+}
+.photo {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    /* margin-left: 0;
+    margin-top: 2.5px;
+    margin-right: 10px; */
+    background: rgb(80, 78, 78);
+}
+.main-side .mainForum .les-medias .myComment .espaceComment{
+    position: relative;
+    border: 1px solid #c77c0c;
+    padding: 12px;
+    width: 55rem;
+    border-radius: 0 10px 10px 10px;
+    margin-top: 8px;
+    justify-content: space-between;
+}
+.espaceComment input[type=text] {
+    border: none;
+    width: 40rem;
+    /* outline: none; */
+}
+.espaceComment input[type=text]:focus {
+    outline: 0;
+}
+.espaceComment input[type=submit] {
+    background: #c77c0c;
+    margin-right: 12px;
+    border-radius: 20px;
+    padding: 7px;
+    width: 100px;
+    color: #ffff;
+}
+.oneComment{
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.main-side .mainForum .les-medias .lesForums .comment-details .oneComment .espaceComment{
+    position: relative;
+    border: 1px solid #6d695b;
+    padding: 12px;
+    width: 55rem;
+    border-radius: 0 10px 10px 10px;
+    margin-top: 8px;
+    justify-content: space-between;
+}
+.unCommentaire{
+    font-size: 13px;
+    width: 90%;
+}
+.details{
+    margin-left: 45.6rem;
+    margin-top: 10px;
+}
+
