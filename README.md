@@ -1,6 +1,6 @@
 # Projet
     ## Observatoire du littoral
-Un projet de marche en ligne
+Sen observatoire
 
 ## Environement
 * PHP 8.1.4
