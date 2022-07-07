@@ -16,7 +16,7 @@
                 <!-- user post -->
                 @if ($publiques)
                     @foreach ($publiques as $public)
-                 <div class="user-post">
+                 <div class="user-post" data-aos="fade-up">
                     <div class="user">
                         <div class="photo">
                             <svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">

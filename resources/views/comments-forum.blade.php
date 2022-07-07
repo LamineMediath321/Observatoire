@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="{{asset('css/forum.css')}}">
         <link rel="stylesheet" href="{{asset('css/comments.css')}}">
 
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -60,7 +61,7 @@
                             <div class="lesForums">
                                 <!-- Un commentaire d'un utilisateur -->
                                 @foreach ($forum->commentaires as $comment)
-                                <div class="comment-details">
+                                <div class="comment-details" data-aos="fade-up">
                                     <div class="d-flex oneComment">
                                         <div class="photo">
                                             <svg width="29" height="29" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +95,12 @@
                 </div> 
             </div>
         </div> 
-       
+        
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
  
