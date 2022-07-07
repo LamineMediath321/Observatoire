@@ -19,7 +19,7 @@ php artisan serve
 php artisan storage:link
 ```
 
-## Il va fallaoir creer une base de donnees nommée observatoire
+## Il va falloir creer une base de donnees nommée observatoire
 
 
 ## Authors
