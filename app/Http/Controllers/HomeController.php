@@ -159,7 +159,7 @@ class HomeController extends Controller
 
         $documents = Donnee::with('user')
             ->where('user_id', Auth::id())
-            ->where('type', 'documents')
+            ->where('type', 'document')
             ->where('status', 'stock')
             ->orderBy('created_at', 'DESC')
             ->get();
@@ -231,6 +231,4 @@ class HomeController extends Controller
         $partager->save();
         return Redirect::route('dashboard');
     }
-
 }
-

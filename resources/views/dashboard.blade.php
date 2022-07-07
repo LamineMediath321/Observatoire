@@ -154,14 +154,15 @@
               <div class="group-medias">
                 <h4>Documents</h4>
                 <div class="list-of-medias">
-                    <div class="card oneCard"  style="width: 210px;" data-bs-toggle="modal" data-bs-target="#exampleModal_">
+                    @foreach ($documents as $document)
+                         <div class="card oneCard"  style="width: 210px;" data-bs-toggle="modal" data-bs-target="#exampleModal_">
                         <img id="example1" src="/images/beau-bord-mer.webp" class="card-img-top" alt="">
                         <div class="card-body ">
                             <svg width="13" height="13" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.74992 14.0833H16.2499M9.74992 18.4167H12.9999M4.33325 4.33332V21.6667C4.33325 22.2413 4.56153 22.7924 4.96785 23.1987C5.37418 23.605 5.92528 23.8333 6.49992 23.8333H19.4999C20.0746 23.8333 20.6257 23.605 21.032 23.1987C21.4383 22.7924 21.6666 22.2413 21.6666 21.6667V9.03716C21.6666 8.74851 21.6088 8.46279 21.4968 8.19675C21.3849 7.93072 21.2208 7.68975 21.0144 7.48799L16.2044 2.78416C15.7996 2.38837 15.256 2.16673 14.6899 2.16666H6.49992C5.92528 2.16666 5.37418 2.39493 4.96785 2.80126C4.56153 3.20759 4.33325 3.75869 4.33325 4.33332V4.33332Z" stroke="#0FA958" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M15.1665 2.16666V6.49999C15.1665 7.07463 15.3948 7.62573 15.8011 8.03205C16.2074 8.43838 16.7585 8.66666 17.3332 8.66666H21.6665" stroke="#0FA958" stroke-width="2" stroke-linejoin="round"/>
                             </svg>                                        
-                            <span class="card-text">titre document</span>
+                            <span class="card-text">{{$document->titre}} </span>
                             <div class="boutons-crud d-flex" id="crud-boutons">
                                 <a href="#" class="public">
                                     <svg width="11" height="11" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,6 +184,8 @@
                            
                         </div>
                     </div>
+                    @endforeach
+                   
                     <!-- Modal Documents -->
                     <div class="modal fade" id="exampleModal_" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" id="dialog-modal">
