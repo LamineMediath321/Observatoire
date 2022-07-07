@@ -23,6 +23,11 @@ Route::post('/partager', [HomeController::class, 'partager'])->name('partager');
 Route::get('/delete/{id}', [HomeController::class, 'delete'])->name('delete');
 Route::get('/partagePage', [HomeController::class, 'partagePage'])->name('partagePage');
 Route::get('/forum', [ForumController::class, 'forum'])->name('forum');
+
+Route::get('/commentsForum', [ForumController::class, 'commentsForum'])->name('commentsForum');
+
+
+Route::get('/dashboard/partager', [HomeController::class, 'dashboardPartager'])->name('dashboardPartager');
 //Pour creer un forum
 Route::post('/create', [ForumController::class, 'create'])->name('create');
 

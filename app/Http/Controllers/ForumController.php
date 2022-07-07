@@ -34,4 +34,10 @@ class ForumController extends Controller
 
         return Redirect::route('forum');
     }
+    
+    public function commentsForum()
+    {
+
+        return view('comments-forum');
+    }
 }

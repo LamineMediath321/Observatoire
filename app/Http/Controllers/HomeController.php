@@ -231,4 +231,6 @@ class HomeController extends Controller
         $partager->save();
         return Redirect::route('dashboard');
     }
+
 }
+
